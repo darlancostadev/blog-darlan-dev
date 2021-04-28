@@ -2,10 +2,18 @@ import React from 'react';
 
 import * as S from './styles';
 
-function Main() {
+function Main({posts}) {
   return (
-      <h1>loremmm</h1>
+    <>
+    {
+      posts.map((post) => (
+        <div>
+          <h1>{post.data.title}</h1>
+          <img src={post.data.capa.url} alt={post.data.capa.alt}/>
+        </div>
+      ))
+    }
+    </>
   );
 }
-
 export default Main;
